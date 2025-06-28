@@ -21,4 +21,13 @@ app.use(express.static("public"));
 // Routes
 app.use("/api/v1/user", userRouter);
 
+// Global Error Handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(err.status || 500).json({
+    success: false,
+    message: err.message || "Internal Server Error",
+  });
+});
+
 module.exports = app;
