@@ -1,0 +1,19 @@
+{
+  "name": "jobtracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run start:dev --prefix server\"",
+    "client": "npm run dev --prefix client",
+    "server": "npm run start --prefix server",
+    "server:dev": "npm run start:dev --prefix server",
+    "start": "concurrently \"npm run server\" \"npm run build --prefix client && npm run preview --prefix client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
