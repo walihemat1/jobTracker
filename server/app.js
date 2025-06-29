@@ -2,7 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 
-const userRouter = require("./routes/userRoutes");
+const userRoutes = require("./routes/userRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -22,7 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Routes
-app.use("/api/v1/user", userRouter);
+app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/auth", authRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {
