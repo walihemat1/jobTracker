@@ -1,9 +1,12 @@
 const express = require("express");
 const cors = require("cors");
+const dotenv = require("dotenv");
 
 const userRouter = require("./routes/userRoutes");
 
 const app = express();
+
+dotenv.config();
 
 // Middlewares
 // Enable CORS for all routes
