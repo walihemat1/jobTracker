@@ -5,7 +5,7 @@ const userRouter = require("./routes/userRoutes");
 
 const app = express();
 
-// Middleware
+// Middlewares
 // Enable CORS for all routes
 app.use(cors());
 
